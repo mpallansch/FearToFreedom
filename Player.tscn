@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcs4rat7nfoy1"]
+[gd_scene load_steps=5 format=3 uid="uid://bcs4rat7nfoy1"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_0su0x"]
 [ext_resource type="Texture2D" uid="uid://d1xhnonelik18" path="res://icon.svg" id="2_lwwrl"]
+[ext_resource type="PackedScene" uid="uid://b48rx265lapf6" path="res://HUD.tscn" id="3_hgaao"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jl8g6"]
 
@@ -18,3 +19,5 @@ shape = SubResource("CircleShape2D_jl8g6")
 texture = ExtResource("2_lwwrl")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="HUD" parent="CharacterBody2D/Camera2D" instance=ExtResource("3_hgaao")]
