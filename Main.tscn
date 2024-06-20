@@ -24,19 +24,19 @@ size = Vector2(1500, 20)
 
 [node name="Player" parent="." instance=ExtResource("1_exbn1")]
 
-[node name="SanityZone" parent="." instance=ExtResource("2_rf81a")]
+[node name="AnxietyZone" parent="." instance=ExtResource("2_rf81a")]
 metadata/width = 1000
 metadata/height = 300
 metadata/priority = 1
 metadata/drain = -5
 
-[node name="SanityZone2" parent="." instance=ExtResource("2_rf81a")]
+[node name="AnxietyZone2" parent="." instance=ExtResource("2_rf81a")]
 metadata/width = 2000
 metadata/height = 600
 metadata/priority = 2
 metadata/drain = 5
 
-[node name="SanityZone3" parent="." instance=ExtResource("2_rf81a")]
+[node name="AnxietyZone3" parent="." instance=ExtResource("2_rf81a")]
 metadata/width = 5000
 metadata/height = 5000
 metadata/priority = 3
