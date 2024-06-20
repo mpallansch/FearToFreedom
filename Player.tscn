@@ -21,3 +21,4 @@ texture = ExtResource("2_lwwrl")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
 [node name="HUD" parent="CharacterBody2D/Camera2D" instance=ExtResource("3_hgaao")]
+unique_name_in_owner = true

@@ -1,26 +1,79 @@
-[gd_scene load_steps=4 format=3 uid="uid://chrvrglkcykfp"]
+[gd_scene load_steps=7 format=3 uid="uid://chrvrglkcykfp"]
 
 [ext_resource type="PackedScene" uid="uid://bcs4rat7nfoy1" path="res://Player.tscn" id="1_exbn1"]
+[ext_resource type="PackedScene" uid="uid://bnpt0rh07t6vl" path="res://AnxietyZone.tscn" id="2_rf81a"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dxqu0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyo8j"]
-size = Vector2(0.99, 0.996667)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrspj"]
+resource_local_to_scene = true
+resource_name = "Shape 1"
+size = Vector2(20, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thbfd"]
+resource_local_to_scene = true
+resource_name = "Shape 1"
+size = Vector2(20, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qjku"]
+resource_local_to_scene = true
+resource_name = "Shape 3"
+size = Vector2(1500, 20)
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_exbn1")]
-position = Vector2(596, 308)
+
+[node name="SanityZone" parent="." instance=ExtResource("2_rf81a")]
+metadata/width = 1000
+metadata/height = 300
+metadata/priority = 1
+metadata/drain = -5
+
+[node name="SanityZone2" parent="." instance=ExtResource("2_rf81a")]
+metadata/width = 2000
+metadata/height = 600
+metadata/priority = 2
+metadata/drain = 5
+
+[node name="SanityZone3" parent="." instance=ExtResource("2_rf81a")]
+metadata/width = 5000
+metadata/height = 5000
+metadata/priority = 3
+metadata/drain = 10
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(-750, 0)
 gravity_scale = 0.0
+freeze = true
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(300, 300)
-scale = Vector2(100, 300)
+scale = Vector2(20, 600)
 texture = SubResource("CanvasTexture_dxqu0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(300.5, 301.5)
-scale = Vector2(100, 300)
-shape = SubResource("RectangleShape2D_gyo8j")
+shape = SubResource("RectangleShape2D_jrspj")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(750, 0)
+gravity_scale = 0.0
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+scale = Vector2(20, 600)
+texture = SubResource("CanvasTexture_dxqu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+shape = SubResource("RectangleShape2D_thbfd")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(0, -300)
+gravity_scale = 0.0
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
+scale = Vector2(1500, 20)
+texture = SubResource("CanvasTexture_dxqu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+shape = SubResource("RectangleShape2D_8qjku")
