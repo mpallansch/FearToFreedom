@@ -2,6 +2,7 @@ extends Node
 
 var hud = null
 var anxiety = 50
+var default_anxiety_change = 15
 var zones = []
 	
 func set_hud(hud_param):
@@ -10,8 +11,11 @@ func set_hud(hud_param):
 func update_anxiety():
 	if zones.size() > 0:
 		anxiety = anxiety + zones[0].drain
-		if hud != null:
-			hud.update()
+	else:
+		anxiety = anxiety + default_anxiety_change
+		
+	if hud != null:
+		hud.update()
 		
 func add_zone(id, priority, drain):
 	var found = false
