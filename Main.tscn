@@ -77,3 +77,15 @@ texture = SubResource("CanvasTexture_dxqu0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
 shape = SubResource("RectangleShape2D_8qjku")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="."]
+position = Vector2(0, -2000)
+gravity_scale = 0.0
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4"]
+scale = Vector2(20, 600)
+texture = SubResource("CanvasTexture_dxqu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
+shape = SubResource("RectangleShape2D_jrspj")
