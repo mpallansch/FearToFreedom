@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnpt0rh07t6vl"]
 
-[ext_resource type="Script" path="res://AnxietyZone.gd" id="1_a317n"]
+[ext_resource type="Script" path="res://Globals/AnxietyZone/AnxietyZone.gd" id="1_a317n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmk6o"]
 resource_local_to_scene = true

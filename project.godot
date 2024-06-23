@@ -11,13 +11,12 @@ config_version=5
 [application]
 
 config/name="Fear to Freedom"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Scenes/Levels/Main/Main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
-PlayerVariables="*res://PlayerVariables.gd"
+PlayerVariables="*res://Globals/PlayerVariables.gd"
 
 [display]
 

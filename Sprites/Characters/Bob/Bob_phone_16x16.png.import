@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2bfp5rx41jrv"
-path="res://.godot/imported/Bob_idle_anim_16x16.png-1b4f02ea17fc768800eeca34e0480b29.ctex"
+uid="uid://dcxsre27w0hpp"
+path="res://.godot/imported/Bob_phone_16x16.png-ccb2bc879386fe9e07a00d558355426f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bob_idle_anim_16x16.png"
-dest_files=["res://.godot/imported/Bob_idle_anim_16x16.png-1b4f02ea17fc768800eeca34e0480b29.ctex"]
+source_file="res://Sprites/Characters/Bob/Bob_phone_16x16.png"
+dest_files=["res://.godot/imported/Bob_phone_16x16.png-ccb2bc879386fe9e07a00d558355426f.ctex"]
 
 [params]
 
