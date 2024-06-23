@@ -17,6 +17,12 @@ func update_anxiety():
 	if hud != null:
 		hud.update()
 		
+func add_anxiety(value):
+	anxiety = anxiety + int(value)
+		
+	if hud != null:
+		hud.update()
+		
 func add_zone(id, priority, drain):
 	var found = false
 	for zone in zones:
