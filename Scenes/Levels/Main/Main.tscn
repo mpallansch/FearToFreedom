@@ -1,98 +1,162 @@
-[gd_scene load_steps=8 format=3 uid="uid://chrvrglkcykfp"]
+[gd_scene load_steps=15 format=3 uid="uid://chrvrglkcykfp"]
 
 [ext_resource type="PackedScene" uid="uid://bcs4rat7nfoy1" path="res://Scenes/Entities/Player/Player.tscn" id="1_2xa60"]
 [ext_resource type="PackedScene" uid="uid://bnpt0rh07t6vl" path="res://Globals/AnxietyZone/AnxietyZone.tscn" id="2_4bpno"]
+[ext_resource type="Texture2D" uid="uid://cog8pyejcl544" path="res://Sprites/Environment/Rug.png" id="3_ih7jn"]
+[ext_resource type="Texture2D" uid="uid://ukt5ug7pko6x" path="res://Sprites/Environment/Interiors_free_48x48.png" id="3_n7cn0"]
 [ext_resource type="PackedScene" uid="uid://bec6sjrt8ynm1" path="res://Scenes/Entities/Collectible/Collectable.tscn" id="3_udbcw"]
+[ext_resource type="Texture2D" uid="uid://bjhgrwk15bf32" path="res://Sprites/Environment/Wall.png" id="5_w0s3a"]
+[ext_resource type="Texture2D" uid="uid://n70qvbnjs7ud" path="res://Sprites/Environment/Door.png" id="7_cmjv2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2ey3"]
+atlas = ExtResource("3_n7cn0")
+region = Rect2(639.24, 535.684, 114.44, 175.676)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dxqu0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrspj"]
 resource_local_to_scene = true
 resource_name = "Shape 1"
-size = Vector2(20, 600)
+size = Vector2(15, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpifd"]
+resource_local_to_scene = true
+resource_name = "Shape 1"
+size = Vector2(620, 169)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccamt"]
+resource_local_to_scene = true
+resource_name = "Shape 1"
+size = Vector2(597, 169)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thbfd"]
 resource_local_to_scene = true
 resource_name = "Shape 1"
 size = Vector2(20, 600)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qjku"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0i4j"]
 resource_local_to_scene = true
-resource_name = "Shape 3"
-size = Vector2(1500, 20)
+resource_name = "Shape 1"
+size = Vector2(1478, 169)
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_2xa60")]
 z_index = 1
-
-[node name="AnxietyZone" parent="." instance=ExtResource("2_4bpno")]
-metadata/width = 1000
-metadata/height = 300
-metadata/priority = 1
-metadata/drain = -5
-
-[node name="AnxietyZone2" parent="." instance=ExtResource("2_4bpno")]
-metadata/width = 2000
-metadata/height = 600
-metadata/priority = 2
-metadata/drain = 5
-
-[node name="AnxietyZone3" parent="." instance=ExtResource("2_4bpno")]
-metadata/width = 5000
-metadata/height = 5000
-metadata/priority = 3
-metadata/drain = 10
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(-750, 0)
-gravity_scale = 0.0
-freeze = true
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-scale = Vector2(20, 600)
-texture = SubResource("CanvasTexture_dxqu0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("RectangleShape2D_jrspj")
-
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
-position = Vector2(750, 0)
-gravity_scale = 0.0
-freeze = true
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
-scale = Vector2(20, 600)
-texture = SubResource("CanvasTexture_dxqu0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
-shape = SubResource("RectangleShape2D_thbfd")
-
-[node name="RigidBody2D3" type="RigidBody2D" parent="."]
-position = Vector2(0, -300)
-gravity_scale = 0.0
-freeze = true
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
-scale = Vector2(1500, 20)
-texture = SubResource("CanvasTexture_dxqu0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
-shape = SubResource("RectangleShape2D_8qjku")
-
-[node name="RigidBody2D4" type="RigidBody2D" parent="."]
-position = Vector2(0, -2000)
-gravity_scale = 0.0
-freeze = true
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4"]
-scale = Vector2(20, 600)
-texture = SubResource("CanvasTexture_dxqu0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
-shape = SubResource("RectangleShape2D_jrspj")
+position = Vector2(0, 1)
 
 [node name="Collectable" parent="." instance=ExtResource("3_udbcw")]
 position = Vector2(-3702, 2)
 metadata/sprite = "Red"
 metadata/increase_anxiety = "-20"
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Environment"]
+offset_left = -737.0
+offset_top = -205.0
+offset_right = 707.0
+offset_bottom = 202.0
+texture = ExtResource("3_ih7jn")
+stretch_mode = 1
+
+[node name="Rug" type="Sprite2D" parent="Environment"]
+position = Vector2(-526, -53)
+texture = SubResource("AtlasTexture_l2ey3")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="Environment"]
+position = Vector2(0, -2000)
+gravity_scale = 0.0
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/RigidBody2D4"]
+scale = Vector2(20, 600)
+texture = SubResource("CanvasTexture_dxqu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/RigidBody2D4"]
+shape = SubResource("RectangleShape2D_jrspj")
+
+[node name="AnxietyZone" parent="Environment" instance=ExtResource("2_4bpno")]
+metadata/width = 1000
+metadata/height = 300
+metadata/priority = 1
+metadata/drain = -5
+
+[node name="AnxietyZone2" parent="Environment" instance=ExtResource("2_4bpno")]
+metadata/width = 2000
+metadata/height = 600
+metadata/priority = 2
+metadata/drain = 5
+
+[node name="AnxietyZone3" parent="Environment" instance=ExtResource("2_4bpno")]
+metadata/width = 5000
+metadata/height = 5000
+metadata/priority = 3
+metadata/drain = 10
+
+[node name="TopWall" type="RigidBody2D" parent="Environment"]
+position = Vector2(0, -350)
+gravity_scale = 0.0
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/TopWall"]
+position = Vector2(417, 59.5)
+shape = SubResource("RectangleShape2D_wpifd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment/TopWall"]
+position = Vector2(-452.5, 59.5)
+shape = SubResource("RectangleShape2D_ccamt")
+
+[node name="TextureRect" type="TextureRect" parent="Environment/TopWall"]
+offset_left = -744.0
+offset_top = -29.0
+offset_right = 726.0
+offset_bottom = 143.0
+texture = ExtResource("5_w0s3a")
+stretch_mode = 1
+
+[node name="RightWall" type="RigidBody2D" parent="Environment"]
+position = Vector2(720, -79)
+gravity_scale = 0.0
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/RightWall"]
+scale = Vector2(20, 600)
+texture = SubResource("CanvasTexture_dxqu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/RightWall"]
+shape = SubResource("RectangleShape2D_thbfd")
+
+[node name="LeftWall" type="RigidBody2D" parent="Environment"]
+position = Vector2(-746, -79)
+gravity_scale = 0.0
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/LeftWall"]
+scale = Vector2(15, 600)
+texture = SubResource("CanvasTexture_dxqu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/LeftWall"]
+shape = SubResource("RectangleShape2D_jrspj")
+
+[node name="BottomWall" type="RigidBody2D" parent="Environment"]
+position = Vector2(0, -350)
+gravity_scale = 0.0
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/BottomWall"]
+position = Vector2(-13, 637)
+shape = SubResource("RectangleShape2D_i0i4j")
+
+[node name="TextureRect" type="TextureRect" parent="Environment/BottomWall"]
+offset_left = -754.0
+offset_top = 554.0
+offset_right = 728.0
+offset_bottom = 726.0
+texture = ExtResource("5_w0s3a")
+stretch_mode = 1
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(-24, -272)
+scale = Vector2(1.63636, 1.60127)
+texture = ExtResource("7_cmjv2")
