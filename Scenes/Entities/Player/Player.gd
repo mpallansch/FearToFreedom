@@ -17,7 +17,11 @@ func _physics_process(delta):
 		PlayerVariables.update_anxiety()
 	
 	var direction = Input.get_vector("left", "right", "up", "down")
+			
 	velocity = direction * SPEED
+		
+	if PlayerVariables.vertical_lock:
+		velocity.y = 0
 	
 	if velocity.x != 0 || velocity.y != 0:
 		%Fog.update_pos(position.x, position.y)

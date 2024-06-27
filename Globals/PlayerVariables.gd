@@ -1,5 +1,6 @@
 extends Node
 
+var vertical_lock = false
 var hud = null
 var anxiety = 50
 var default_anxiety_change = 15

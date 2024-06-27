@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://chrvrglkcykfp"]
+[gd_scene load_steps=16 format=3 uid="uid://chrvrglkcykfp"]
 
 [ext_resource type="PackedScene" uid="uid://bcs4rat7nfoy1" path="res://Scenes/Entities/Player/Player.tscn" id="1_2xa60"]
 [ext_resource type="PackedScene" uid="uid://bnpt0rh07t6vl" path="res://Globals/AnxietyZone/AnxietyZone.tscn" id="2_4bpno"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bec6sjrt8ynm1" path="res://Scenes/Entities/Collectible/Collectable.tscn" id="3_udbcw"]
 [ext_resource type="Texture2D" uid="uid://bjhgrwk15bf32" path="res://Sprites/Environment/Wall.png" id="5_w0s3a"]
 [ext_resource type="Texture2D" uid="uid://n70qvbnjs7ud" path="res://Sprites/Environment/Door.png" id="7_cmjv2"]
+[ext_resource type="PackedScene" uid="uid://dnb2yupisgpe1" path="res://Scenes/Entities/NPC/NPC.tscn" id="8_3eh4v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l2ey3"]
 atlas = ExtResource("3_n7cn0")
@@ -160,3 +161,6 @@ stretch_mode = 1
 position = Vector2(-24, -272)
 scale = Vector2(1.63636, 1.60127)
 texture = ExtResource("7_cmjv2")
+
+[node name="Npc" parent="." instance=ExtResource("8_3eh4v")]
+position = Vector2(585, -931)
